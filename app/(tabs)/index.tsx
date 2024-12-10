@@ -3,7 +3,6 @@ import { View, Text, FlatList, StyleSheet, TouchableOpacity, TextInput } from 'r
 import axios from 'axios';
 import { FontAwesome } from '@expo/vector-icons';
 
-// Define a type for a Todo item
 type Todo = {
     userId: number;
     id: number;
@@ -23,7 +22,7 @@ const TodoApp: React.FC = () => {
     const fetchTodos = async () => {
         try {
             const response = await axios.get<Todo[]>('https://jsonplaceholder.typicode.com/todos');
-            setTodos(response.data.slice(0, 10)); // Limit to 10 items for simplicity
+            setTodos(response.data.slice(0, 10)); //Limiting the data to 10 items for simplicity
         } catch (error) {
             console.error('Error fetching todos:', error);
         }
